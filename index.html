@@ -268,21 +268,29 @@
     position:relative;
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
+    padding:28px;
   }
   .profile-photo{
-    position:absolute;
-    inset:22px;
-    width:auto;
-    height:auto;
-    max-width:calc(100% - 44px);
-    max-height:calc(100% - 44px);
+    position:relative;
+    width:100%;
+    max-width:360px;
+    aspect-ratio:1/1;
     object-fit:cover;
-    border-radius:18px;
-    border:1px solid rgba(217,174,88,0.22);
-    box-shadow:0 24px 60px rgba(0,0,0,0.26);
+    border-radius:50%;
+    border:2px solid rgba(217,174,88,0.22);
+    box-shadow:
+      0 0 0 8px rgba(139,127,246,0.08),
+      0 18px 45px rgba(0,0,0,0.28),
+      0 0 40px rgba(139,127,246,0.2);
     z-index:1;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
   }
-  #about-icosa{ width:100%; height:100%; }
+  #about-icosa{
+    width:100%; height:100%;
+    position:absolute;
+    inset:0;
+    z-index:0;
+  }
   .about-body p{ color:var(--text-mid); font-size:1.05rem; margin-bottom:20px; }
   .about-body p strong{ color:var(--text-hi); font-weight:600; }
   .fact-row{
